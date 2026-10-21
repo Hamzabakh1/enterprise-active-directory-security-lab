@@ -37,7 +37,7 @@ Dedicated management segment, least privilege, protected OUs, global department 
 
 ## Installation and configuration walkthrough
 
-Read [deployment](DEPLOYMENT.md), then [configuration](docs/configuration/CONFIGURATION.md). The DC installation scripts require `-ApprovedLab`, the exact host names and explicit confirmation. They have **not** been run on Windows Server here.
+Start with the [French hands-on DC01 guide](PRACTICE_DC01_FR.md), then read [deployment](DEPLOYMENT.md) and [configuration](docs/configuration/CONFIGURATION.md). The DC installation scripts require `-ApprovedLab`, the exact host names and explicit confirmation. They have **not** been run on Windows Server here.
 
 ## Automation examples
 
