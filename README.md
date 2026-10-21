@@ -27,15 +27,6 @@ This editable SVG is the reference design. It shows planned components and is se
 
 Domain: `corp.example.test`. DC01 and DC02 are designed for the DC segment; FS01 serves department shares; MGMT01 is the administration entry point; CLIENT01 validates policy. [Full architecture](ARCHITECTURE.md) and [editable topology source](assets/diagrams/ad-topology.mmd).
 
-```mermaid
-flowchart LR
-  C[CLIENT01] -->|DNS/Kerberos| D1[DC01 DNS+GC]
-  C -->|SMB| F[FS01]
-  M[MGMT01] -->|Admin| D1
-  D1 <-->|AD replication| D2[DC02 DNS+GC]
-  M -->|Admin| D2
-```
-
 ## Technology stack and infrastructure requirements
 
 Windows Server 2025 or 2022, AD DS, DNS, DHCP on a separate approved server, GPO, SMB, Windows PowerShell 5.1, RSAT, Pester and GitHub Actions. See [prerequisites](PREREQUISITES.md) and [environment audit](ENVIRONMENT_AUDIT.md). The local pilot workstation cannot validate the full reference topology.
