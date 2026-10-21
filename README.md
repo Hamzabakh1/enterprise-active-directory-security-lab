@@ -6,7 +6,7 @@
 
 **Atlas Enterprise Technologies · Hamza Bakh · Active Directory and Messaging Infrastructure Engineer portfolio**
 
-> Status: **IMPLEMENTED** offline PowerShell module and synthetic dataset · **TESTED** local parser/Pester/CSV checks (see report) · **DOCUMENTED ONLY** Windows Server deployment · **BLOCKED** live AD integration and recovery drills.
+> Status: **IMPLEMENTED** Windows Server 2025 Standard Evaluation (Server Core) on `Atlas-DC01`, offline PowerShell module and synthetic dataset · **TESTED** local parser/Pester/CSV checks (see report) and installer first boot · **DOCUMENTED ONLY** AD DS deployment · **BLOCKED** live AD integration and recovery drills until initial Administrator setup and lab configuration.
 
 ## Project overview and business problem
 
@@ -55,9 +55,13 @@ The `-WhatIf` examples require an actual isolated `corp.example.test` domain eve
 
 ## Screenshots and verified evidence
 
-The screenshot below was captured from the local VirtualBox manager on 2026-10-21. It proves only that the `Atlas-DC01` VM shell is configured, powered off, and has an empty optical drive. Windows Server, AD DS, DNS, replication, and GPO are **not** shown or claimed.
+The first screenshot records the VirtualBox VM before installation, when it was powered off with an empty optical drive. The later guest-only captures show Windows Server installation progress and its first-boot Administrator password prompt on 2026-10-21. No Administrator password, AD DS, DNS, replication or GPO result is shown or claimed.
 
 ![VirtualBox manager showing powered-off Atlas-DC01 VM and empty optical drive](assets/screenshots/virtualbox-dc01-configuration.jpg)
+
+![Windows Server 2025 installation progress inside Atlas-DC01](docs/screenshots/installation/01-windows-server-installation.png)
+
+![Windows Server 2025 first boot requesting Administrator password setup](docs/screenshots/installation/02-windows-server-first-boot.png)
 
 The [screenshot manifest](SCREENSHOT_MANIFEST.md) records its scope and the remaining captures. The actual command output is preserved as text: [Pester](tests/evidence/pester.txt), [Python unit tests](tests/evidence/unittest.txt), [PowerShell parser](tests/evidence/parser.txt), and [200-user CSV check](tests/evidence/csv-200.json). The [GitHub Actions run](https://github.com/Hamzabakh1/enterprise-active-directory-security-lab/actions) verifies the published branch. No terminal screenshot is presented as operational AD evidence.
 
@@ -79,4 +83,4 @@ Explain why the client must use AD-integrated DNS, how DC locator and Kerberos d
 
 ## Future improvements
 
-Deploy an isolated Windows Server lab, add authenticated health evidence and screenshots, test System State recovery, add Pester 5/PSScriptAnalyzer CI, and evaluate Windows LAPS and privileged access workstations.
+Complete first sign-in and domain controller configuration, add authenticated health evidence and screenshots, test System State recovery, add Pester 5/PSScriptAnalyzer CI, and evaluate Windows LAPS and privileged access workstations.

@@ -7,12 +7,12 @@ This repository was developed and tested on a Windows workstation in October 202
 | PowerShell | Windows PowerShell 5.1 and PowerShell 7 available; scripts parsed without errors |
 | Python | Bundled Python 3.12 used for offline tests |
 | Git | Local version history and clean commits |
-| Virtualization | Oracle VirtualBox 7.2.22 installed; an isolated `Atlas-DC01` VM shell exists without a guest OS |
-| Windows Server media | Official evaluation ISO download incomplete; no OS installation performed |
+| Virtualization | Oracle VirtualBox 7.2.22 installed; isolated `Atlas-DC01` VM booted with BIOS firmware after EFI stalled |
+| Windows Server media | Official Windows Server 2025 evaluation ISO downloaded and verified; Standard Evaluation Server Core installed and first boot reached |
 | Active Directory | No forest, DC health, replication or GPO integration test performed |
 | Exchange Server SE | No supported Exchange server or mail delivery test available |
 | Entra / Microsoft 365 | Test tenant access, roles and licenses not verified |
-| Screenshots | A real DC01 VM setup capture is included; no operational service screenshot exists |
+| Screenshots | Real VM setup, installation progress and first-boot guest captures included; no operational AD service screenshot exists |
 
 The reference topology requires more memory and licensed services than this workstation can provide concurrently. All current PASS results in this repository are offline tests. Live integration and recovery checks remain pending. Never connect the fictional `corp.example.test` namespace or synthetic identities to a production environment.
 

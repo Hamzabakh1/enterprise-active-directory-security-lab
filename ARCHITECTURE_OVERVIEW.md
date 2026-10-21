@@ -1,6 +1,6 @@
 # Atlas Enterprise Technologies — shared reference architecture
 
-Fictional organization: 200 synthetic employees across IT, Human Resources, Finance, Operations, Engineering and Management. Forest: `corp.example.test` (lab only). The design is **DOCUMENTED ONLY**; an uninstalled DC01 VM shell exists, but no servers or tenant were provisioned.
+Fictional organization: 200 synthetic employees across IT, Human Resources, Finance, Operations, Engineering and Management. Planned forest: `corp.example.test` (lab only). The enterprise topology is **DOCUMENTED ONLY**. Windows Server 2025 Standard Evaluation (Server Core) is installed on the isolated `Atlas-DC01` pilot VM, but no AD forest or tenant was provisioned.
 
 ![Atlas reference topology](assets/diagrams/enterprise-topology.svg)
 

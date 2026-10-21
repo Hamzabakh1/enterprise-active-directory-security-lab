@@ -1,6 +1,6 @@
 # Authentic screenshot workflow
 
-A VirtualBox manager capture documents the powered-off DC01 VM shell. No operational infrastructure screenshot exists yet. The repository screenshot manifests keep live evidence pending. Architecture diagrams are reference designs, not operational evidence.
+A VirtualBox manager capture documents the DC01 VM shell before installation. Guest-only VirtualBox captures now document Windows Server installation and first boot. No authenticated AD service screenshot exists yet. The repository screenshot manifest keeps live AD evidence pending. Architecture diagrams are reference designs, not operational evidence.
 
 ## Capture tool evaluation
 
@@ -8,7 +8,7 @@ A VirtualBox manager capture documents the powered-off DC01 VM shell. No operati
 |---|---|---|
 | PowerShell + Windows screen APIs | PowerShell 7 available; capture script parsed and `-WhatIf` produced no file | Primary method for a visible, approved lab console; real capture untested |
 | Playwright | Python and Node packages not found | Install only if an approved browser test requires it |
-| Hypervisor screenshot | VirtualBox installed and an uninstalled DC01 VM shell registered | Wait for a booted guest before capturing operational evidence |
+| Hypervisor screenshot | VirtualBox 7.2.22 captured the booted DC01 guest framebuffer directly | Used for installation and first-boot evidence; use again for authenticated validation after guest setup |
 | Python Pillow | Importable in bundled Python | Available for size/legibility checks, never to fabricate operational content |
 | ImageMagick | `magick` command absent | Optional, not required |
 
@@ -22,4 +22,4 @@ A VirtualBox manager capture documents the powered-off DC01 VM shell. No operati
 6. Open the PNG, verify readable framing and redact only sensitive material in an auditable way. If redaction would change the operational conclusion, discard the screenshot and recapture safely.
 7. Add caption and verification command to the manifest and link the screenshot from the related procedure. Keep architecture diagrams in `assets/diagrams/`.
 
-Suggested capture methods: PowerShell screen API for a visible VM console; hypervisor capture when the VM console is remote; Playwright only for owned browser UIs with a logged-in, approved test account. The VirtualBox manager now shows an uninstalled DC01 VM shell; there is still no operational guest or tenant UI to capture.
+Suggested capture methods: VirtualBox guest framebuffer capture for the local VM; PowerShell screen API for a visible approved lab console; Playwright only for owned browser UIs with a logged-in, approved test account. The guest is installed, but operational AD and tenant UIs have not been validated.
