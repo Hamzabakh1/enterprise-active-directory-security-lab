@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Atlas Enterprise Technologies reference architecture</title>
+  <desc id="desc">Editable conceptual topology showing workstation, management, Active Directory, application, messaging, synchronization and Entra cloud trust boundaries. It is a proposed lab design, not a deployed system.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07182f"/><stop offset="1" stop-color="#0b2c52"/></linearGradient>
+    <linearGradient id="panel" x2="1" y2="1"><stop stop-color="#11345c"/><stop offset="1" stop-color="#0c2543"/></linearGradient>
+    <linearGradient id="cloud" x2="1" y2="1"><stop stop-color="#164f82"/><stop offset="1" stop-color="#113860"/></linearGradient>
+    <filter id="shadow" x="-15%" y="-25%" width="130%" height="155%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000f24" flood-opacity="0.4"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#56c5ee"/></marker>
+    <style>
+      text{font-family:Segoe UI,Arial,sans-serif;fill:#edf7ff} .title{font-size:38px;font-weight:700;letter-spacing:1px} .subtitle{font-size:18px;fill:#a8cbe4} .section{font-size:19px;font-weight:700;letter-spacing:1.4px;fill:#91daf5} .label{font-size:19px;font-weight:700} .detail{font-size:15px;fill:#afcfe3} .micro{font-size:13px;fill:#a7c7dc} .panel{fill:url(#panel);stroke:#3e79a4;stroke-width:2;filter:url(#shadow)} .node{fill:#16416b;stroke:#56a8d5;stroke-width:1.5} .edge{fill:none;stroke:#56c5ee;stroke-width:3;marker-end:url(#arrow)} .edge2{fill:none;stroke:#7ca9d1;stroke-width:2.5;stroke-dasharray:8 7;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <path d="M0 110H1600 M0 830H1600" stroke="#2c5b7c" stroke-width="1"/>
+  <text x="70" y="62" class="title">ATLAS ENTERPRISE TECHNOLOGIES</text>
+  <text x="71" y="94" class="subtitle">Reference architecture · 200 synthetic identities · corp.example.test</text>
+  <rect x="70" y="147" width="258" height="486" rx="20" class="panel"/>
+  <text x="95" y="185" class="section">WORKSTATIONS</text>
+  <text x="95" y="211" class="micro">192.0.2.96/27 · example range</text>
+  <rect x="95" y="246" width="208" height="126" rx="15" class="node"/>
+  <circle cx="132" cy="283" r="15" fill="#5cd4ef"/>
+  <path d="M108 338c1-25 48-25 49 0" fill="none" stroke="#5cd4ef" stroke-width="9" stroke-linecap="round"/>
+  <text x="169" y="288" class="label">CLIENT01</text>
+  <text x="169" y="316" class="detail">User sign-in</text>
+  <text x="169" y="340" class="detail">GPO · SMB</text>
+  <text x="96" y="421" class="detail">Business users access file</text>
+  <text x="96" y="446" class="detail">and messaging services.</text>
+  <rect x="96" y="508" width="206" height="87" rx="12" fill="#102d4d" stroke="#3d729a"/>
+  <text x="112" y="541" class="label">Trust boundary</text>
+  <text x="112" y="569" class="detail">No direct DC admin</text>
+  <rect x="357" y="147" width="400" height="486" rx="20" class="panel"/>
+  <text x="382" y="185" class="section">IDENTITY CORE</text>
+  <text x="382" y="211" class="micro">192.0.2.0/27 · Active Directory site</text>
+  <rect x="383" y="246" width="345" height="120" rx="15" class="node"/>
+  <rect x="405" y="270" width="65" height="70" rx="8" fill="#0a2441" stroke="#5ab9e4" stroke-width="2"/>
+  <path d="M417 286h40m-40 13h40m-40 13h40" stroke="#5ab9e4" stroke-width="3"/>
+  <text x="491" y="286" class="label">DC01</text>
+  <text x="491" y="316" class="detail">DNS · Global Catalog</text>
+  <text x="491" y="341" class="detail">Primary lab controller</text>
+  <rect x="383" y="390" width="345" height="120" rx="15" class="node"/>
+  <rect x="405" y="414" width="65" height="70" rx="8" fill="#0a2441" stroke="#5ab9e4" stroke-width="2"/>
+  <path d="M417 430h40m-40 13h40m-40 13h40" stroke="#5ab9e4" stroke-width="3"/>
+  <text x="491" y="430" class="label">DC02</text>
+  <text x="491" y="460" class="detail">DNS · Global Catalog</text>
+  <text x="491" y="485" class="detail">Replication partner</text>
+  <path d="M646 366v22" stroke="#71cce8" stroke-width="3" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="383" y="560" class="detail">Kerberos · LDAP · DNS · GPO</text>
+  <text x="383" y="588" class="micro">Replication and SYSVOL validation required</text>
+  <rect x="785" y="147" width="420" height="486" rx="20" class="panel"/>
+  <text x="810" y="185" class="section">APPLICATIONS &amp; MESSAGING</text>
+  <text x="810" y="211" class="micro">192.0.2.32/27 · example range</text>
+  <rect x="810" y="246" width="370" height="85" rx="14" class="node"/>
+  <text x="832" y="281" class="label">FS01</text><text x="832" y="308" class="detail">Department shares · access control</text>
+  <rect x="810" y="349" width="370" height="112" rx="14" class="node"/>
+  <text x="832" y="383" class="label">EX01 / EX02</text>
+  <text x="832" y="411" class="detail">Exchange Server SE · mail transport</text>
+  <text x="832" y="437" class="micro">EX02 and DAG optional; require dedicated capacity</text>
+  <rect x="810" y="480" width="370" height="110" rx="14" class="node"/>
+  <text x="832" y="515" class="label">SYNC01</text>
+  <text x="832" y="543" class="detail">Scoped directory synchronization</text>
+  <text x="832" y="568" class="micro">Outbound TLS only; tenant approval required</text>
+  <rect x="1233" y="147" width="300" height="486" rx="20" fill="url(#cloud)" stroke="#5aaadb" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1258" y="185" class="section">CLOUD BOUNDARY</text>
+  <text x="1258" y="211" class="micro">Test tenant · access unverified</text>
+  <rect x="1258" y="246" width="250" height="107" rx="15" class="node"/>
+  <text x="1280" y="285" class="label">Microsoft Entra ID</text>
+  <text x="1280" y="316" class="detail">Identity · CA · MFA</text>
+  <rect x="1258" y="380" width="250" height="107" rx="15" class="node"/>
+  <text x="1280" y="419" class="label">Microsoft 365</text>
+  <text x="1280" y="450" class="detail">Exchange Online</text>
+  <rect x="1258" y="515" width="250" height="80" rx="12" fill="#0d3154" stroke="#5aaadb"/>
+  <text x="1280" y="548" class="label">Security controls</text>
+  <text x="1280" y="575" class="detail">Policy · logs · recovery</text>
+  <path class="edge" d="M304 315H377"/>
+  <path class="edge" d="M729 306H803"/>
+  <path class="edge2" d="M729 337H773V535H803"/>
+  <path class="edge" d="M1181 535H1252V318"/>
+  <path class="edge2" d="M1181 405H1218V434H1252"/>
+  <rect x="70" y="666" width="1463" height="134" rx="20" class="panel"/>
+  <text x="96" y="708" class="section">CONTROLLED MANAGEMENT</text>
+  <rect x="95" y="727" width="250" height="50" rx="10" class="node"/>
+  <text x="115" y="759" class="label">MGMT01 · 192.0.2.70</text>
+  <text x="384" y="757" class="detail">Privileged administration → DCs, Exchange, monitoring and backups</text>
+  <path class="edge2" d="M552 665V638"/>
+  <path class="edge2" d="M1003 665V638"/>
+  <text x="70" y="859" class="micro">REFERENCE DESIGN  /  Documentation addresses and synthetic identities  /  Operational deployment and screenshots pending</text>
+</svg>

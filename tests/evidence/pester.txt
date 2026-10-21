@@ -1,0 +1,9 @@
+Timestamp UTC: 2026-10-21T06:09:32.2865910Z
+Pester 3.4.0
+Total: 4
+Passed: 4
+Failed: 0
+Passed: imports and exposes the expected commands
+Passed: rejects a non-lab target before making an AD call
+Passed: has no default plaintext password in the synthetic CSV
+Passed: does not create an OU during WhatIf with mocked AD commands

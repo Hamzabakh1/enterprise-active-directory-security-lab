@@ -1,0 +1,25 @@
+name: Offline validation
+on:
+  push:
+  pull_request:
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Parse PowerShell
+        shell: pwsh
+        run: |
+          $files = Get-ChildItem scripts,tests -Recurse -File | Where-Object Extension -in '.ps1','.psm1'
+          foreach ($file in $files) {
+            $tokens=$null; $errors=$null
+            [System.Management.Automation.Language.Parser]::ParseFile($file.FullName,[ref]$tokens,[ref]$errors) | Out-Null
+            if ($errors) { throw "$($file.FullName): $($errors -join '; ')" }
+          }
+      - name: Validate CSV
+        shell: pwsh
+        run: |
+          ./scripts/validation/Test-AtlasConfiguration.ps1
+          ./scripts/validation/Test-AtlasConfiguration.ps1 -CsvPath ./examples/synthetic-data/users-200.csv
+      - name: Test synthetic generator
+        run: python -m unittest discover -s tests -v

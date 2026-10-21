@@ -1,0 +1,33 @@
+flowchart LR
+  subgraph W[Workstations 192.0.2.96/27]
+    C[CLIENT01 .100]
+  end
+  subgraph M[Management 192.0.2.64/27]
+    A[MGMT01 .70]
+  end
+  subgraph D[Domain controllers 192.0.2.0/27]
+    D1[DC01 .10
+DNS + GC]
+    D2[DC02 .11
+DNS + GC]
+  end
+  subgraph S[Applications 192.0.2.32/27]
+    F[FS01 .40]
+    E1[EX01 .50]
+    E2[EX02 .51 optional]
+    Y[SYNC01 .55]
+  end
+  subgraph Cloud[Cloud trust boundary]
+    I[Microsoft Entra ID]
+    O[Microsoft 365 / Exchange Online]
+  end
+  C -->|DNS / Kerberos / LDAP| D1
+  C -->|SMB| F
+  A -->|Privileged admin| D1
+  A -->|Privileged admin| E1
+  D1 <-->|AD replication| D2
+  E1 <-->|DAG if deployed| E2
+  E1 -->|Directory lookup| D1
+  Y -->|Read scoped identities| D1
+  Y -->|Outbound TLS provisioning| I
+  I --> O

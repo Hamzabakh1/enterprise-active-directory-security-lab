@@ -1,0 +1,22 @@
+flowchart TB
+  subgraph Workstation[Workstation VLAN 192.0.2.96/27]
+    C[CLIENT01 .100]
+  end
+  subgraph Management[Management VLAN 192.0.2.64/27]
+    M[MGMT01 .70]
+  end
+  subgraph Controllers[DC VLAN 192.0.2.0/27]
+    D1[DC01 .10
+DNS/GC]
+    D2[DC02 .11
+DNS/GC]
+  end
+  subgraph Applications[Application VLAN 192.0.2.32/27]
+    F[FS01 .40]
+  end
+  C -->|DNS SRV, Kerberos, LDAP| D1
+  C -->|DNS failover| D2
+  C -->|SMB with Kerberos ticket| F
+  M -->|Privileged administration| D1
+  M -->|Privileged administration| D2
+  D1 <-->|AD and SYSVOL replication| D2

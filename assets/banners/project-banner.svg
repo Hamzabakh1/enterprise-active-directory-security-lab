@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-label="ACTIVE DIRECTORY project banner">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07182e"/><stop offset="1" stop-color="#102e59"/></linearGradient><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M 32 0 L 0 0 0 32" fill="none" stroke="#3b82f6" stroke-opacity=".11"/></pattern><linearGradient id="glow"><stop stop-color="#38bdf8" stop-opacity=".8"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></linearGradient></defs>
+<rect width="1280" height="320" fill="url(#bg)"/><rect width="1280" height="320" fill="url(#grid)"/>
+<path d="M800 300 C900 240 930 260 1010 180 S1160 140 1280 48" fill="none" stroke="#38bdf8" stroke-opacity=".35" stroke-width="2"/>
+<circle cx="1060" cy="145" r="114" fill="none" stroke="#38bdf8" stroke-opacity=".25" stroke-width="2"/><circle cx="1060" cy="145" r="77" fill="none" stroke="#38bdf8" stroke-opacity=".45" stroke-width="2"/><circle cx="1060" cy="145" r="38" fill="none" stroke="#38bdf8" stroke-width="3"/><circle cx="1060" cy="145" r="9" fill="#38bdf8"/>
+<circle cx="946" cy="145" r="5" fill="#38bdf8"/><circle cx="1174" cy="145" r="5" fill="#38bdf8"/><circle cx="1060" cy="31" r="5" fill="#38bdf8"/><circle cx="1060" cy="259" r="5" fill="#38bdf8"/>
+<rect x="64" y="66" width="58" height="5" rx="2.5" fill="#38bdf8"/><text x="64" y="118" fill="#99c8ef" font-family="Segoe UI, Arial, sans-serif" font-size="17" letter-spacing="4">ATLAS ENTERPRISE TECHNOLOGIES</text>
+<text x="64" y="183" fill="#fff" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="1">ACTIVE DIRECTORY</text>
+<text x="64" y="227" fill="#b3d0ea" font-family="Segoe UI, Arial, sans-serif" font-size="21">Resilient identity · DNS · GPO · recovery</text>
+<text x="64" y="282" fill="#70a6cf" font-family="Segoe UI, Arial, sans-serif" font-size="14" letter-spacing="2">ENGINEERING LAB / HAMZA BAKH</text></svg>
